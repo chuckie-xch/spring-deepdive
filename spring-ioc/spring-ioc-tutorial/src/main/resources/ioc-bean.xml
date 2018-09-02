@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="exampleBean" class="com.bestcode.springioc.bean.ExampleBean"></bean>
+
+    <bean id="book" class="com.bestcode.springioc.bean.Book">
+        <constructor-arg name="name" type="java.lang.String" value="深入浅出Spring" />
+        <constructor-arg index="1" type="java.lang.String" value="是谁不重要" />
+    </bean>
+
+    <bean id="clientService" class="com.bestcode.springioc.bean.ClientService" factory-method="createInstance" >
+        <constructor-arg name="type" type="java.lang.String" value="B" ></constructor-arg>
+    </bean>
+
+    <bean id="bookFactoryBean" class="com.bestcode.springioc.bean.BookFactoryBean"></bean>
+
+    <bean id="prototypeBean" class="com.bestcode.springioc.bean.PrototypeBean" scope="prototype" ></bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
